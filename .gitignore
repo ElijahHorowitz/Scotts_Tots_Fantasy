@@ -1,0 +1,6 @@
+*.rpm
+*.rpm.1
+config.json
+/Server/models/index.js
+Python-3.11.4.tgz
+Python-3.11.4/
