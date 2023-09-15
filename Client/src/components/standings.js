@@ -10,7 +10,7 @@ function Standings() {
         standingState ? setStandingState(false) : setStandingState(true);
     }
     const getTrueStandings = async () => {
-        const response = await axios.get("http://3.144.36.245:3001/standingRouter/trueStanding");
+        const response = await axios.get("https://scottstotsfantasy.com/standingRouter/trueStanding");
         const data = await response.data;
         setTrueStandings(data); 
     }
@@ -20,7 +20,7 @@ function Standings() {
     },[]);
 
     const getMedianStandings = async () => {
-        const response = await axios.get("http://3.144.36.245:3001/standingRouter/standingByMedian");
+        const response = await axios.get("https://scottstotsfantasy.com/standingRouter/standingByMedian");
         const data = await response.data;
         setMedianStandings(data); 
     }

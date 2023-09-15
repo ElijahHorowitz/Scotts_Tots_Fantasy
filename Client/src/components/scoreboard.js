@@ -12,7 +12,7 @@ function ScoreBoard() {
     const [median, setMedian] = useState([]);
 
     const getMaxWeek = async () => {
-        const response = await axios.get(`http://3.144.36.245:3001/scoreboardRouter/currentWeek/max`);
+        const response = await axios.get(`https://scottstotsfantasy.com/scoreboardRouter/currentWeek/max`);
         const maxWeekResponse = await response.data
         console.log(maxWeekResponse.week)
         setDisplayWeek(maxWeekResponse.week);
@@ -24,7 +24,7 @@ function ScoreBoard() {
     },[]);
 
     useEffect(() => {
-        axios.get(`http://3.144.36.245:3001/medianRouter/${displayWeek}`).then(response => {
+        axios.get(`https://scottstotsfantasy.com/medianRouter/${displayWeek}`).then(response => {
         console.log(response.data);
         setMedian(response.data);
         
@@ -32,14 +32,14 @@ function ScoreBoard() {
     }, [params]);
 
     useEffect(() => {
-            axios.get(`http://3.144.36.245:3001/scoreboardRouter/selectWeek/${params}`).then(response => {
+            axios.get(`https://scottstotsfantasy.com/scoreboardRouter/selectWeek/${params}`).then(response => {
                 console.log(response.data);
                 setScores(response.data);
             })
         }, [params]);
     
     useEffect(() => {
-        axios.get(`http://3.144.36.245:3001/scoreboardRouter/currentWeek/availableWeeks`).then(response => {
+        axios.get(`https://scottstotsfantasy.com/scoreboardRouter/currentWeek/availableWeeks`).then(response => {
             console.log(response.data);
             setAvaliableWeks(response.data);
         })

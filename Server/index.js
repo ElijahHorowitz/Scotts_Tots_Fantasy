@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const db = require('./models');
-const port=3001;
+const port=8080;
 
 app.use(express.json());
 app.use(cors());
